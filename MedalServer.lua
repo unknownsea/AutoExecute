@@ -25,11 +25,11 @@ local function Init(ip: string, port: string)
     testScript:Destroy()
 
     if not testResult then
-        return "Init failed: " .. (err or "Unknown error")
+        return false, "Init failed: " .. (err or "Unknown error")
     end
 
     getgenv().decompile = decompile
-    return "Decompile function initialized successfully"
+    return true, "Decompile function initialized successfully"
 end
 
 return {
