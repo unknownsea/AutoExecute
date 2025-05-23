@@ -32,4 +32,6 @@ local function Init(ip: string, port: string)
     return "Decompile function initialized successfully"
 end
 
-return Init
+return {
+    Init = Init
+}
